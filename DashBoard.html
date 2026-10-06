@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Aetheris Library Dashboard</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<link rel="stylesheet" href="DashBoard2.css">
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <!-- ================= Sidebar ================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <i class="bi bi-book-half"></i>
+
+            <span>Aetheris Library</span>
+
+        </div>
+
+        <ul>
+
+            <li class="active">
+
+                <i class="bi bi-grid-fill"></i>
+
+                <span>Dashboard</span>
+
+            </li>
+
+            <li>
+
+                <i class="bi bi-book"></i>
+
+                <a href="viewBooks.jsp">Books</a>
+
+            </li>
+
+            <li>
+
+                <i class="bi bi-people-fill"></i>
+
+                <a href="students.jsp">Students</a>
+
+            </li>
+
+            <li>
+
+                <i class="bi bi-journal-check"></i>
+
+                <a href="issueBook.jsp">Issue Book</a>
+
+            </li>
+
+            <li>
+
+                <i class="bi bi-arrow-repeat"></i>
+
+                <a href="returnBook.jsp">Return Book</a>
+
+            </li>
+
+            <li>
+
+                <i class="bi bi-file-earmark-bar-graph"></i>
+
+                <a href="reports.jsp">Reports</a>
+
+            </li>
+
+            <li>
+
+                <i class="bi bi-box-arrow-right"></i>
+
+                <a href="LogoutServlet">Logout</a>
+
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- ================= Main Content ================= -->
+
+    <main class="main-content">
+
+        <!-- ================= Top Bar ================= -->
+
+        <header class="topbar">
+
+            <div class="search-box">
+
+                <i class="bi bi-search"></i>
+
+                <input type="text"
+                placeholder="Search books, authors, students...">
+
+            </div>
+
+            <div class="top-icons">
+
+                <i class="bi bi-bell-fill"></i>
+
+                <i class="bi bi-gear-fill"></i>
+
+                <img src="https://i.pravatar.cc/150?img=12"
+                class="profile">
+
+            </div>
+
+        </header>
+
+        <!-- ================= Welcome ================= -->
+
+        <section class="welcome">
+
+            <div>
+
+                <h2>
+
+                    Welcome Back,
+
+                    <span>Administrator</span>
+
+                </h2>
+
+                <p>
+
+                    Manage books, students, issued records and reports from one dashboard.
+
+                </p>
+
+            </div>
+
+            <button class="btn btn-primary">
+
+                <i class="bi bi-plus-circle"></i>
+
+                Add New Book
+
+            </button>
+
+        </section>
+
+        <!-- ================= Statistics ================= -->
+
+        <section class="stats">
+
+            <div class="stat-card">
+
+                <i class="bi bi-book-fill stat-icon"></i>
+
+                <h4>Total Books</h4>
+
+                <h2>420</h2>
+
+                <small>
+
+                    <i class="bi bi-arrow-up"></i>
+
+                    +25 This Month
+
+                </small>
+
+            </div>
+
+            <div class="stat-card">
+
+                <i class="bi bi-people-fill stat-icon"></i>
+
+                <h4>Total Students</h4>
+
+                <h2>186</h2>
+
+                <small>
+
+                    Registered Users
+
+                </small>
+
+            </div>
+
+            <div class="stat-card">
+
+                <i class="bi bi-journal-check stat-icon"></i>
+
+                <h4>Issued Books</h4>
+
+                <h2>84</h2>
+
+                <small>
+
+                    Currently Borrowed
+
+                </small>
+
+            </div>
+
+            <div class="stat-card">
+
+                <i class="bi bi-check-circle-fill stat-icon"></i>
+
+                <h4>Available Books</h4>
+
+                <h2>336</h2>
+
+                <small>
+
+                    Ready to Borrow
+
+                </small>
+
+            </div>
+
+        </section>
+
+        <!-- ================= Featured Section ================= -->
+
+        <section class="featured-section">
+
+            <div class="featured-book">
+
+                <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=500">
+
+                <div class="book-info">
+
+                    <span class="badge bg-success">
+
+                        Featured Book
+
+                    </span>
+
+                    <h3>
+
+                        Clean Code
+
+                    </h3>
+
+                    <p>
+
+                        A Handbook of Agile Software Craftsmanship by Robert C. Martin.
+                        One of the most recommended books for software engineers.
+
+                    </p>
+
+                    <div class="progress">
+
+                        <div class="progress-bar"
+                        style="width:85%"></div>
+
+                    </div>
+
+                    <small>
+
+                        85% Students Recommend This Book
+
+                    </small>
+
+                </div>
+
+            </div>
+
+            <!-- Membership Card -->
+
+            <div class="membership">
+
+                <h5>Membership Status</h5>
+
+                <h2>Premium Library</h2>
+
+                <div class="price">
+
+                    Active
+
+                </div>
+
+                <button class="btn btn-warning">
+
+                    View Details
+
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- ================= Books Section Starts ================= -->
+
+        <section class="books">
+
+            <h4>
+
+                <i class="bi bi-stars"></i>
+
+                Recommended Books
+
+            </h4>
+
+            <div class="book-grid">
+            <!-- Book 1 -->
+
+<div class="book-card">
+
+    <span class="status available">Available</span>
+
+    <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400" alt="Java">
+
+    <div class="book-content">
+
+        <h5>Java Programming</h5>
+
+        <p>James Gosling</p>
+
+        <div class="rating">
+
+            ⭐⭐⭐⭐⭐
+
+        </div>
+
+        <a href="#" class="issue-btn">
+
+            Issue Book
+
+        </a>
+
+    </div>
+
+</div>
+
+<!-- Book 2 -->
+
+<div class="book-card">
+
+    <span class="status available">Available</span>
+
+    <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=400" alt="Spring">
+
+    <div class="book-content">
+
+        <h5>Spring Boot</h5>
+
+        <p>Craig Walls</p>
+
+        <div class="rating">
+
+            ⭐⭐⭐⭐⭐
+
+        </div>
+
+        <a href="#" class="issue-btn">
+
+            Issue Book
+
+        </a>
+
+    </div>
+
+</div>
+
+<!-- Book 3 -->
+
+<div class="book-card">
+
+    <span class="status issued">Issued</span>
+
+    <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?w=400" alt="React">
+
+    <div class="book-content">
+
+        <h5>React JS</h5>
+
+        <p>Jordan Walke</p>
+
+        <div class="rating">
+
+            ⭐⭐⭐⭐☆
+
+        </div>
+
+        <a href="#" class="issue-btn disabled">
+
+            Not Available
+
+        </a>
+
+    </div>
+
+</div>
+
+<!-- Book 4 -->
+
+<div class="book-card">
+
+    <span class="status available">Available</span>
+
+    <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=400" alt="Oracle">
+
+    <div class="book-content">
+
+        <h5>Oracle SQL</h5>
+
+        <p>Jason Price</p>
+
+        <div class="rating">
+
+            ⭐⭐⭐⭐⭐
+
+        </div>
+
+        <a href="#" class="issue-btn">
+
+            Issue Book
+
+        </a>
+
+    </div>
+
+</div>
+
+<!-- Book 5 -->
+
+<div class="book-card">
+
+    <span class="status available">Available</span>
+
+    <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=400" alt="Python">
+
+    <div class="book-content">
+
+        <h5>Python</h5>
+
+        <p>Eric Matthes</p>
+
+        <div class="rating">
+
+            ⭐⭐⭐⭐⭐
+
+        </div>
+
+        <a href="#" class="issue-btn">
+
+            Issue Book
+
+        </a>
+
+    </div>
+
+</div>
+
+<!-- Book 6 -->
+
+<div class="book-card">
+
+    <span class="status available">Available</span>
+
+    <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=400" alt="DSA">
+
+    <div class="book-content">
+
+        <h5>Data Structures</h5>
+
+        <p>Mark Allen Weiss</p>
+
+        <div class="rating">
+
+            ⭐⭐⭐⭐⭐
+
+        </div>
+
+        <a href="#" class="issue-btn">
+
+            Issue Book
+
+        </a>
+
+    </div>
+
+</div>
+
+<!-- Book 7 -->
+
+<div class="book-card">
+
+    <span class="status available">Available</span>
+
+    <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=400" alt="HTML">
+
+    <div class="book-content">
+
+        <h5>HTML & CSS</h5>
+
+        <p>Jon Duckett</p>
+
+        <div class="rating">
+
+            ⭐⭐⭐⭐☆
+
+        </div>
+
+        <a href="#" class="issue-btn">
+
+            Issue Book
+
+        </a>
+
+    </div>
+
+</div>
+
+<!-- Book 8 -->
+
+<div class="book-card">
+
+    <span class="status issued">Issued</span>
+
+    <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400" alt="JavaScript">
+
+    <div class="book-content">
+
+        <h5>JavaScript</h5>
+
+        <p>David Flanagan</p>
+
+        <div class="rating">
+
+            ⭐⭐⭐⭐⭐
+
+        </div>
+
+        <a href="#" class="issue-btn disabled">
+
+            Not Available
+
+        </a>
+
+    </div>
+
+</div>
+
+<!-- Book 9 -->
+
+<div class="book-card">
+
+    <span class="status available">Available</span>
+
+    <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=400" alt="Networking">
+
+    <div class="book-content">
+
+        <h5>Computer Networks</h5>
+
+        <p>Andrew Tanenbaum</p>
+
+        <div class="rating">
+
+            ⭐⭐⭐⭐⭐
+
+        </div>
+
+        <a href="issueBook.jsp" class="issue-btn">
+
+            Issue Book
+
+        </a>
+
+    </div>
+
+</div>
+
+<!-- Book 10 -->
+
+<div class="book-card">
+
+    <span class="status available">Available</span>
+
+    <img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=400" alt="OS">
+
+    <div class="book-content">
+
+        <h5>Operating Systems</h5>
+
+        <p>Silberschatz</p>
+
+        <div class="rating">
+
+            ⭐⭐⭐⭐☆
+
+        </div>
+
+        <a href="#" class="issue-btn">
+
+            Issue Book
+
+        </a>
+
+    </div>
+
+</div>
+
+<!-- Book 11 -->
+
+<div class="book-card">
+
+    <span class="status available">Available</span>
+
+    <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=400" alt="DBMS">
+
+    <div class="book-content">
+
+        <h5>DBMS</h5>
+
+        <p>Raghu Ramakrishnan</p>
+
+        <div class="rating">
+
+            ⭐⭐⭐⭐⭐
+
+        </div>
+
+        <a href="#" class="issue-btn">
+
+            Issue Book
+
+        </a>
+
+    </div>
+
+</div>
+
+<!-- Book 12 -->
+
+<div class="book-card">
+
+    <span class="status available">Available</span>
+
+    <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=400" alt="Algorithms">
+
+    <div class="book-content">
+
+        <h5>Algorithms</h5>
+
+        <p>Robert Sedgewick</p>
+
+        <div class="rating">
+
+            ⭐⭐⭐⭐⭐
+
+        </div>
+
+        <a href="issueBook.jsp" class="issue-btn">
+
+            Issue Book
+
+        </a>
+
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer class="footer">
+
+    <p>
+
+        © 2026 Aetheris Library Management System | Designed with ❤️
+
+    </p>
+
+</footer>
+
+</main>
+
+</div>
+
+<script src="DashBoard.js"></script>
+
+</body>
+
+</html>
